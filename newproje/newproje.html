@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mekan Menü</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f8f8;
+      color: #333;
+      text-align: center;
+    }
+
+    header {
+      background-image: url('MENÜANA.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 250px 0;
+      font-size: 40px;
+      text-align: center;
+      position: relative;
+    }
+
+    .mekan-adi {
+      margin-top: 60px;
+    }
+
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      background: #000000;
+      padding: 15px;
+    }
+
+    .categories button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 6px;
+      background: #43be54;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .categories button:hover {
+      background: #0a0000;
+    }
+
+    .menu-items {
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .menu-item {
+      background: #fff;
+      width: 280px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: left;
+    }
+
+    .menu-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .menu-item-content {
+      padding: 10px 15px;
+    }
+
+    .menu-item-title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .menu-item-price {
+      color: #e53935;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+    .menu-item-desc {
+      font-size: 14px;
+      margin-top: 5px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="mekan-adi"></div>
+  </header>
+
+  <div class="categories">
+    <button onclick="showItems('tatlilar')">Tatlılar</button>
+    <button onclick="showItems('icecekler')">Meşrubatlar</button>
+    <button onclick="showItems('araSicaklar')">Ara Sıcaklar</button>
+  </div>
+
+  <div class="menu-items" id="menuContainer"></div>
+
+  <script>
+    const menu = {
+      tatlilar: [
+        {
+          ad: "Baklava",
+          fiyat: "60 TL",
+          resim: "baklava.jpg",
+          aciklama: "Geleneksel Antep fıstıklı tatlı"
+        },
+        {
+          ad: "Sütlaç",
+          fiyat: "45 TL",
+          resim: "sütlaç.jpg",
+          aciklama: "Fırında pişmiş, bol tarçınlı"
+        },
+        {
+          ad: "katmer",
+          fiyat: "50 TL",
+          resim: "katmer.jpg",
+          aciklama: "Fırında pişmiş, bol tarçınlı"
+        },
+        {
+          ad: "profiterol",
+          fiyat: "50 TL",
+          resim: "profiterol.jpg",
+          aciklama: "Fırında pişmiş, bol tarçınlı"
+        },
+        {
+          ad: "Künefe",
+          fiyat: "70 TL",
+          resim: "künefe.jpeg",
+          aciklama: "Tel kadayıf içinde eritilmiş peynir"
+        }
+      ],
+      icecekler: [
+        { ad: "Kola", fiyat: "25 TL", resim: "cola.jpg" },
+        { ad: "Ayran", fiyat: "15 TL", resim: "ayran.jpg" },
+        { ad: "fanta", fiyat: "15 TL", resim: "fanta.jpg" },
+        { ad: "sprite", fiyat: "15 TL", resim: "sprite.jpg" },
+        { ad: "Su", fiyat: "10 TL", resim: "su.jpeg" }
+      ],
+      araSicaklar: [
+        { ad: "Sigara Böreği", fiyat: "40 TL", resim: "sigara.jpg" },
+        { ad: "Paçanga", fiyat: "50 TL", resim: "paçanga.jpg" },
+        { ad: "Mantar Sote", fiyat: "60 TL", resim: "mantar.jpg" }
+      ]
+    };
+
+    function showItems(category) {
+      const container = document.getElementById('menuContainer');
+      container.innerHTML = '';
+
+      if (menu[category]) {
+        menu[category].forEach(item => {
+          const div = document.createElement('div');
+          div.className = 'menu-item';
+          div.innerHTML = `
+            <img src="${item.resim}" alt="${item.ad}">
+            <div class="menu-item-content">
+              <div class="menu-item-title">${item.ad}</div>
+              <div class="menu-item-desc">${item.aciklama || ""}</div>
+              <div class="menu-item-price">${item.fiyat}</div>
+            </div>
+          `;
+          container.appendChild(div);
+        });
+      }
+    }
+  </script>
+</body>
+</html>

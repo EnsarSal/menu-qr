@@ -1,0 +1,76 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ccc2b8;
+    margin: 0;
+    padding: 0;
+    color: #a09282;
+  }
+  .sun-icons .star {
+    color: gold;
+    font-size: 30px;
+    margin: 0 5px;
+  }
+  .menu-container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 1px solid #f2d6b3;
+    border-radius: 10px;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .menu-header {
+    margin-bottom: 20px;
+  }
+  
+  .sun-icons {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  h1 {
+    font-size: 36px;
+    margin: 0;
+    color: #a35b00;
+  }
+  
+  .menu-columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+  }
+  
+  .menu-column {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .menu-column h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #f2d6b3;
+    padding-bottom: 5px;
+  }
+  
+  .menu-column ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .menu-column li {
+    font-size: 18px;
+    margin: 8px 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dotted #f2d6b3;
+    padding-bottom: 5px;
+  }
+  
+  .menu-footer {
+    margin-top: 30px;
+    font-size: 16px;
+    color: #a35b00;
+  }
